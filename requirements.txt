@@ -8,3 +8,7 @@ shap
 joblib
 pydantic
 python-multipart
+plotly
+streamlit
+pyvis
+requests
