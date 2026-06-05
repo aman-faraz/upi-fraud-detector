@@ -63,14 +63,16 @@ def get_stats():
 
 def load_db(limit=500, fraud_only=False):
     try:
-        conn  = sqlite3.connect(DB_PATH)
-        where = "WHERE is_fraud=1" if fraud_only else ""
-        df    = pd.read_sql(
-            f"SELECT * FROM predictions {where} "
-            f"ORDER BY id DESC LIMIT {limit}", conn
+        params = {"limit": limit, "fraud_only": fraud_only}
+        r = requests.get(
+            f"{API_URL}/transactions",
+            params=params,
+            timeout=10
         )
-        conn.close()
-        return df
+        data = r.json()
+        if "transactions" in data and len(data["transactions"]) > 0:
+            return pd.DataFrame(data["transactions"])
+        return pd.DataFrame()
     except:
         return pd.DataFrame()
 
