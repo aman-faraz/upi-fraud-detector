@@ -1,0 +1,31 @@
+
+UPI FRAUD DETECTION — MODEL SUMMARY
+=====================================
+Model          : XGBoost Classifier
+Training rows  : 40,000
+Test rows      : 10,000
+Features       : 16
+
+PERFORMANCE METRICS
+-------------------
+PR-AUC         : 0.6897
+ROC-AUC        : 0.9355
+Precision      : 0.8000
+Recall         : 0.3626
+F1 Score       : 0.4990
+Threshold      : 0.8807
+
+TOP 3 FEATURES (by importance)
+--------------------------------
+1. receiver_in_degree  :  0.2243
+2. velocity_1h  :  0.2086
+3. near_limit  :  0.1202
+
+HYPERPARAMETERS
+---------------
+n_estimators   : 300
+max_depth      : 6
+learning_rate  : 0.05
+subsample      : 0.8
+colsample_bytree: 0.8
+scale_pos_weight: 8.6
