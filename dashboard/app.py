@@ -19,7 +19,7 @@ st.set_page_config(
 )
 
 # ── Constants ─────────────────────────────────────────────────────────────────
-API_URL  = "http://localhost:8000"
+API_URL  = "https://upi-fraud-api-sm90.onrender.com"
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH  = os.path.join(BASE_DIR, 'api', 'fraud_results.db')
 STORE_PATH = os.path.join(BASE_DIR, 'data', 'processed',
