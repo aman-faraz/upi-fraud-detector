@@ -158,12 +158,12 @@ with tab1:
     # Metric cards
     st.subheader("Live Statistics")
     c1,c2,c3,c4,c5,c6 = st.columns(6)
-    c1.metric("Total Scored",   f"{stats.get('total',0):,}")
-    c2.metric("Fraud Flagged",  f"{stats.get('total_fraud',0):,}")
-    c3.metric("Fraud Rate",     f"{stats.get('fraud_rate_pct',0)}%")
-    c4.metric("High Risk",      f"{stats.get('high_risk',0):,}")
-    c5.metric("Mule Senders",   f"{stats.get('mule_senders',0):,}")
-    c6.metric("Mule Receivers", f"{stats.get('mule_receivers',0):,}")
+    c1.metric("Total Scored",   f"{int(stats.get('total',0) or 0):,}")
+    c2.metric("Fraud Flagged",  f"{int(stats.get('total_fraud',0) or 0):,}")
+    c3.metric("Fraud Rate",     f"{stats.get('fraud_rate_pct',0) or 0}%")
+    c4.metric("High Risk",      f"{int(stats.get('high_risk',0) or 0):,}")
+    c5.metric("Mule Senders",   f"{int(stats.get('mule_senders',0) or 0):,}")
+    c6.metric("Mule Receivers", f"{int(stats.get('mule_receivers',0) or 0):,}")
 
     st.divider()
 
