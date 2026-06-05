@@ -265,9 +265,9 @@ with tab1:
             if val == 'MEDIUM': return 'color:#FFC107;font-weight:bold'
             return 'color:#28A745'
 
-        styled = df[show_cols].style\
-            .applymap(colour_risk, subset=['risk_label'])\
-            .format({'amount':'₹{:,.2f}','fraud_score':'{:.4f}'})
+        styled = df[show_cols].style \
+        .map(colour_risk, subset=['risk_label']) \
+        .format({'amount':'₹{:,.2f}','fraud_score':'{:.4f}'})
 
         st.dataframe(styled, use_container_width=True, height=320)
         st.caption(

@@ -8,7 +8,7 @@ from datetime import datetime
 import os
 
 # ── Config ────────────────────────────────────────────────────────────────────
-API_URL       = "http://localhost:8000"
+API_URL       = "https://upi-fraud-api-sm90.onrender.com"
 SLEEP_SECONDS = 1      # 1 transaction per second
 FRAUD_RATE    = 0.15   # 15% will be fraud scenarios
 
@@ -170,4 +170,3 @@ while True:
             break
 
     time.sleep(SLEEP_SECONDS)
-    
