@@ -459,7 +459,7 @@ with tab3:
                     df_check = load_db(limit=500)
                     # Use accounts CSV to map VPA to account_id
                     accounts_path = os.path.join(
-                        BASE_DIR, 'data', 'raw', 'upi_accounts.csv'
+                        BASE_DIR, 'data', 'processed', 'account_feature_store.csv'
                     )
                     acc_df = pd.read_csv(accounts_path)
                     vpa_to_id = dict(zip(
